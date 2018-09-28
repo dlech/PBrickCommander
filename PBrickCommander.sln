@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEFDC72A-CDC7-4469-A995-783FDDD4D9B2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PBrickCommander.WinForms", "PBrickCommander.WinForms\PBrickCommander.WinForms.csproj", "{DE4B1651-CC39-4E9C-8F8D-DDB75F8C8CDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBrickCommander.Common", "PBrickCommander.Common\PBrickCommander.Common.csproj", "{5929D52D-8F2C-44E9-86A0-19AE59A242CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BluetoothLE", "..\Dandy.Devices\src\BluetoothLE\BluetoothLE.csproj", "{187B7A45-15A9-433D-A3E0-0FE2214B6597}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE4B1651-CC39-4E9C-8F8D-DDB75F8C8CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4B1651-CC39-4E9C-8F8D-DDB75F8C8CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4B1651-CC39-4E9C-8F8D-DDB75F8C8CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4B1651-CC39-4E9C-8F8D-DDB75F8C8CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5929D52D-8F2C-44E9-86A0-19AE59A242CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5929D52D-8F2C-44E9-86A0-19AE59A242CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5929D52D-8F2C-44E9-86A0-19AE59A242CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5929D52D-8F2C-44E9-86A0-19AE59A242CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0383E172-1DFC-4DB6-8AE9-7CECF129BA09}
+	EndGlobalSection
+EndGlobal
