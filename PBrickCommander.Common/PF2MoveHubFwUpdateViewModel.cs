@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Dandy.Devices.BluetoothLE;
+using Dandy.Lms.PF2.FirmwareUpdate;
 
 namespace PBrickCommander
 {
@@ -14,7 +15,7 @@ namespace PBrickCommander
         private readonly Action close;
         private readonly Action<Action> invokeOnUIThread;
         private int busyCount;
-        private readonly AdvertisementWatcher watcher;
+        private readonly HubWatcher watcher;
 
         public BindingList<PF2MoveHubFwUpdateDeviceViewModel> Devices { get; }
 
@@ -24,39 +25,32 @@ namespace PBrickCommander
             this.close = close ?? throw new ArgumentNullException(nameof(close));
             this.invokeOnUIThread = invokeOnUIThread ?? throw new ArgumentNullException(nameof(invokeOnUIThread));
             Devices = new BindingList<PF2MoveHubFwUpdateDeviceViewModel>();
-            watcher = new AdvertisementWatcher(new Guid("00001625-1212-efde-1623-785feabcd123"));
-            watcher.Received += Watche_Received;
-            watcher.Stopped += Watcher_Stopped;
+            // TODO: also detect official firmware and offer to reboot
+            watcher = new HubWatcher(HubType.MoveHub);
+            watcher.HubConnected += Watcher_HubConnected;
         }
         
-        private void Watche_Received(object sender, AdvertisementReceivedEventArgs e)
+        private void Watcher_HubConnected(object sender, Hub hub)
         {
             invokeOnUIThread(() => {
-                var match = Devices.SingleOrDefault(x => x.BDAddr == e.Address.ToString());
+                var match = Devices.SingleOrDefault(x => x.BDAddr == hub.Id);
                 if (match == null) {
-                    Devices.Add(new PF2MoveHubFwUpdateDeviceViewModel(e));
+                    Devices.Add(new PF2MoveHubFwUpdateDeviceViewModel(hub, null));
                 }
                 else {
-                    match.Update(e);
+                    match.Update(hub);
                 }
-            });
-        }
-
-        private void Watcher_Stopped(object sender, AdvertisementWatcherStoppedEventArgs e)
-        {
-            invokeOnUIThread(() => {
-                // TODO: what to here? for example if bluetooth is turned off
             });
         }
 
         public void Start()
         {
-            watcher.Start();
+            watcher.StartScan();
         }
 
         public void Stop()
         {
-            watcher.Stop();
+            watcher.StopScan();
         }
 
         public void Close()

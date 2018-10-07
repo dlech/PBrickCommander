@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PBrickCommander.Common", "P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BluetoothLE", "..\Dandy.Devices\src\BluetoothLE\BluetoothLE.csproj", "{187B7A45-15A9-433D-A3E0-0FE2214B6597}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PF2", "..\Dandy.Lms\src\PF2\PF2.csproj", "{CBBC5E3D-4297-41BA-894D-076D6C1D49C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Internal", "..\Dandy.Lms\src\Internal\Internal.csproj", "{BA3B3FF6-F866-4759-AA2D-CCEAED6BF8BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,14 @@ Global
 		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{187B7A45-15A9-433D-A3E0-0FE2214B6597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBC5E3D-4297-41BA-894D-076D6C1D49C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBC5E3D-4297-41BA-894D-076D6C1D49C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBC5E3D-4297-41BA-894D-076D6C1D49C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBC5E3D-4297-41BA-894D-076D6C1D49C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3B3FF6-F866-4759-AA2D-CCEAED6BF8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3B3FF6-F866-4759-AA2D-CCEAED6BF8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3B3FF6-F866-4759-AA2D-CCEAED6BF8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3B3FF6-F866-4759-AA2D-CCEAED6BF8BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

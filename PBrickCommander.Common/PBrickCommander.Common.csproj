@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Dandy.Devices\src\BluetoothLE\BluetoothLE.csproj" />
+    <ProjectReference Include="..\..\Dandy.Lms\src\PF2\PF2.csproj" />
   </ItemGroup>
 
 </Project>
