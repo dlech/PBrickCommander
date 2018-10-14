@@ -5,7 +5,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Dandy.Devices.BluetoothLE;
+using Dandy.Lms.PF2;
 using Dandy.Lms.PF2.FirmwareUpdate;
+using Hub = Dandy.Lms.PF2.FirmwareUpdate.Hub;
+using HubWatcher = Dandy.Lms.PF2.FirmwareUpdate.HubWatcher;
 
 namespace PBrickCommander
 {

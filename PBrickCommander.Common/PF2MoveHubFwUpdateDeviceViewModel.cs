@@ -6,6 +6,7 @@ using Dandy.Devices.BluetoothLE;
 using Dandy.Lms.PF2;
 using Dandy.Lms.PF2.FirmwareUpdate;
 using Microsoft.Extensions.Logging;
+using Hub = Dandy.Lms.PF2.FirmwareUpdate.Hub;
 
 namespace PBrickCommander
 {

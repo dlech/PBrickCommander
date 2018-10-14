@@ -14,10 +14,22 @@ namespace PBrickCommander.WinForms
     public partial class mainForm : Form
     {
         private PF2MoveHubFwUpdateForm pf2MoveHubUpdateForm;
+        private PBrickManagerViewModel viewModel;
 
         public mainForm()
         {
             InitializeComponent();
+            viewModel = new PBrickManagerViewModel(InvokeOnMain);
+        }
+
+        private void InvokeOnMain(Action action)
+        {
+            if (InvokeRequired) {
+                Invoke(action);
+            }
+            else {
+                action();
+            }
         }
 
         private void boostFwUpdateButton_Click(object sender, EventArgs e)
@@ -47,6 +59,12 @@ namespace PBrickCommander.WinForms
             pf2MoveHubUpdateForm = new PF2MoveHubFwUpdateForm(firmware);
             pf2MoveHubUpdateForm.FormClosed += (s, a) => pf2MoveHubUpdateForm = null;
             pf2MoveHubUpdateForm.Show();
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = viewModel.Devices;
+            viewModel.StartScan();
         }
     }
 }

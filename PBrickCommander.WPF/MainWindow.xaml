@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PBrickCommander.WPF"
+        xmlns:PBrickCommander="clr-namespace:PBrickCommander;assembly=PBrickCommander.Common" x:Class="PBrickCommander.WPF.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <CollectionViewSource x:Key="pBrickManagerViewModelViewSource" d:DesignSource="{d:DesignInstance {x:Type PBrickCommander:PBrickManagerViewModel}, CreateList=True}"/>
+        <CollectionViewSource x:Key="pBrickManagerViewModelDevicesViewSource" Source="{Binding Devices, Source={StaticResource pBrickManagerViewModelViewSource}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource pBrickManagerViewModelDevicesViewSource}">
+        <DataGrid x:Name="devicesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,10.286,9.714" RowDetailsVisibilityMode="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name.Text, IsAsync=True, ValidatesOnExceptions=True}" Header="Name"/>
+                <DataGridTextColumn Binding="{Binding FirmwareVersion.Text}" Header="Firmware Version" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
