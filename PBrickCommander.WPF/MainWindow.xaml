@@ -15,7 +15,18 @@
         <DataGrid x:Name="devicesDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,10.286,9.714" RowDetailsVisibilityMode="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Name.Text, IsAsync=True, ValidatesOnExceptions=True}" Header="Name"/>
+                <DataGridCheckBoxColumn Binding="{Binding ButtonState, Mode=OneWay}" Header="Button" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding FirmwareVersion.Text}" Header="Firmware Version" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding HardwareVersion.Text}" Header="Hardware Version" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding RSSI.Text}" Header="RSSI" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding BatteryPercent.Text}" Header="Battery" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Manufacturer.Text}" Header="Manufacturer" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding BluetoothVersion.Text}" Header="Bluetooth Firmware Version" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Unknown}" Header="Unknown" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding HubType}" Header="Hub Type" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Channel}" Header="Channel" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding BluetoothAddress.Text}" Header="Bluetooth Address" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding BootloaderBluetoothAddress.Text}" Header="Bootlaoder Bluetooth Address" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
